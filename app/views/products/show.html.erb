@@ -1,0 +1,21 @@
+<p>
+  <strong>
+    <%= @product.name %>
+  </strong>
+</p>
+
+<p class="status">
+  <strong>Description</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+<b>Categories</b>
+<%= @product.categories.map { |c| c.name }.join(' ')%><br/>
+</p>
+
+<p>
+  <strong>Price</strong>
+  <%= @product.price %>
+  <%= button_to "Add to cart", add_to_cart_product_path %>
+</p>
