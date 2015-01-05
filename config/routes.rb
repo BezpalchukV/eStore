@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :orders
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.
@@ -14,6 +16,8 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
+  resources :order_items
+
   resources :products
 
   # Example resource route with options:
