@@ -2,12 +2,15 @@
     <p id="notice"><%= notice %></p>
 <% end %>
 <p>
-  List of products
+  <h2>List of products</h2>
 </p>
-
+<h3><%= link_to 'Cart', cart_path(session[:cart_id]) if session[:cart_id]%></h3>
+<div class="row text-center">
+<div class="col-md-3 col-sm-6 hero-feature">
 <% @products.each do |product| %>
         <div class="entry">
-          <h3><%= product.name %></h3>
+          <%= image_tag('Breakfast.jpg', size: '128x128', alt: 'Edit Entry') %>
+          <h3><%= link_to product.name, product %></h3>
           <%= sanitize(product.description) %>
           <div class="price_line">
             <span class="price"><%= number_to_currency(product.price) %></span>
@@ -15,3 +18,5 @@
           </div>
         </div>
 <% end %>
+</div>
+</div>

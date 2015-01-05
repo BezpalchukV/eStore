@@ -16,6 +16,6 @@
 
 <p>
   <strong>Price</strong>
-  <%= @product.price %>
-  <%= button_to "Add to cart", add_to_cart_product_path %>
+  <span class="price"><%= number_to_currency(@product.price) %></span>
+  <%= button_to "Add to cart", order_items_path(product_id: @product) %>
 </p>
