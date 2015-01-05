@@ -1,4 +1,4 @@
-ActiveAdmin.register Order do
+ActiveAdmin.register Cart do
 
 
   # See permitted parameters documentation:

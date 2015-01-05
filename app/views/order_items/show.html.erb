@@ -1,8 +1,10 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
 
 <h2>Your Pragmatic Cart</h2>
 <ul>
-  <% @order.order_items.each do |item| %>
+  <% @cart.order_items.each do |item| %>
       <li><%= item.product.name %></li>
   <% end %>
 </ul>

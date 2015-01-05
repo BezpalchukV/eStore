@@ -7,11 +7,11 @@ class OrderItemsController < ApplicationController
 
   def create
     product = Product.find(params[:product_id])
-    @order_item = @order.order_items.build(product: product)
+    @order_item = @cart.add_product(product.id)
 
     respond_to do |format|
       if @order_item.save
-          format.html { redirect_to @order_item.order, notice: 'Order item was successfully created.'}
+          format.html { redirect_to @order_item.cart }
       else
           format.html { render action: 'new' }
       end
@@ -25,7 +25,7 @@ class OrderItemsController < ApplicationController
   private
 
     def order_item_params
-      params.require(:order_item).permit(:product_id, :order_id)
+      params.require(:order_item).permit(:product_id)
     end
 
 end

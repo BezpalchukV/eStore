@@ -6,10 +6,10 @@ class ApplicationController < ActionController::Base
   private
 
   def set_cart
-    @order = Order.find(session[:order_id])
+    @cart = Cart.find(session[:cart_id])
   rescue ActiveRecord::RecordNotFound
-    @order = Order.create
-    session[:order_id] = @order.id
+    @cart = Cart.create
+    session[:cart_id] = @cart.id
   end
 
 end
