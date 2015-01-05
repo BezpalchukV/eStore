@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    @categories = Category.all
   end
 
   def new
@@ -32,6 +33,24 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def add_to_cart
+    @product = Product.find(params[:id])
+    product_id = @product.id
+    if cookies[:cart].present?
+      products = cookies[:cart].split(',')
+      products << product_id
+      cookies[:cart] = products.join(',')
+    else
+      cookies[:cart] = product_id
+    end
+    redirect_to :back
+  end
+
+  def clear_cart
+    cookies.delete :cart
+    redirect_to :back
   end
 
   private

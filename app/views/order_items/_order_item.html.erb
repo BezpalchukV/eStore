@@ -1,0 +1,5 @@
+<tr>
+  <td><%= order_item.quantity %>&times;</td>
+  <td><%= order_item.product.name %></td>
+  <td class="item_price"><%= number_to_currency(order_item.total_price) %></td>
+</tr>
