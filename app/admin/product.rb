@@ -1,13 +1,13 @@
 ActiveAdmin.register Product do
 
-  form multipart: true do |f|
+  form(html: {multipart: true}) do |f|
     f.inputs 'Product' do
       f.input :name
       f.input :description
       f.input :quantity
       f.input :price
       f.input :categories, as: :check_boxes
-      # f.input :photo, required: false
+      f.input :photo, as: :file, required: false
     end
     f.actions
   end
@@ -64,6 +64,6 @@ ActiveAdmin.register Product do
   #   permitted
   # end
 
-  permit_params :name, :description, :price, :quantity, category_ids: []
+  permit_params :name, :description, :price, :quantity, :photo, category_ids: []
 
 end
