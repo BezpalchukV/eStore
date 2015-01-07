@@ -7,7 +7,7 @@ ActiveAdmin.register Product do
       f.input :quantity
       f.input :price
       f.input :categories, as: :check_boxes
-      f.input :photo, as: :file, required: false
+      f.input :photo, required: false
     end
     f.actions
   end
