@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
 
+  before_action :set_cart
+
   def index
     @products = Product.all.page(params[:page]).per(3)
     @categories = Category.all

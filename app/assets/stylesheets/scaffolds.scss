@@ -109,3 +109,72 @@ div.price_line {
     }
   }
 }
+
+#side {
+  float: left;
+  padding: 1em 2em;
+  width: 13em;
+  background: #80d66b;
+
+  form, div {
+    display: inline;
+  }
+
+  input {
+    font-size: small;
+  }
+
+  #cart {
+    font-size: smaller;
+    color: #ffffff;
+
+    table {
+      border-top: 1px dotted #595;
+      border-bottom: 1px dotted #595;
+      margin-bottom: 10px;
+    }
+  }
+
+  ul {
+    padding: 0;
+
+    li {
+      list-style: none;
+
+      a {
+        color: #bfb;
+        font-size: small;
+      }
+    }
+  }
+}
+
+#columns {
+  background: #80d66b;
+
+  #main {
+    margin-left: 17em;
+    padding: 1em;
+    background: #ffffff;
+  }
+
+  #side {
+    float: left;
+    padding: 1em 2em;
+    width: 13em;
+    background: #80d66b;
+  }
+
+  ul {
+    padding: 0;
+
+    li {
+      list-style: none;
+
+      a {
+        color: #bfb;
+        font-size: small;
+      }
+    }
+  }
+}
