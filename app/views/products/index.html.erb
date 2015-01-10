@@ -1,24 +1,16 @@
 <% if notice %>
     <p id="notice"><%= notice %></p>
 <% end %>
-<p>
+
+<div class="title_products">
   <h2>List of products</h2>
-</p>
+  <h3><%= @category.name if params[:category].present? %></h3>
+</div>
 
 <%= paginate @products %>
 
 <div class="row text-center">
-<div class="col-md-3 col-sm-6 hero-feature">
-<% @products.each do |product| %>
-        <div class="entry">
-          <%= image_tag('Breakfast.jpg', size: '128x128', alt: 'Edit Entry') %>
-          <h3><%= link_to product.name, product %></h3>
-          <%= sanitize(product.description) %>
-          <div class="price_line">
-            <span class="price"><%= number_to_currency(product.price) %></span>
-            <%= button_to 'Add to Cart', order_items_path(product_id: product), remote: true %>
-          </div>
-        </div>
-<% end %>
-</div>
+    <div class="col-md-3 col-sm-6 hero-feature">
+        <%= render @products %>
+    </div>
 </div>

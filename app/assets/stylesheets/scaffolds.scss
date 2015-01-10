@@ -69,7 +69,7 @@ div {
 }
 
 div.price_line {
-  margin-left: 100px;
+  font-size: large;
   margin-top: 0.5em;
   margin-bottom: 0.8em;
 
@@ -113,7 +113,7 @@ div.price_line {
 #side {
   float: left;
   padding: 1em 2em;
-  width: 13em;
+  width: 20em;
   background: #80d66b;
 
   form, div {
@@ -151,6 +151,7 @@ div.price_line {
 
 #columns {
   background: #80d66b;
+  margin-top: 4em;
 
   #main {
     margin-left: 17em;
@@ -161,8 +162,9 @@ div.price_line {
   #side {
     float: left;
     padding: 1em 2em;
-    width: 13em;
+    width: 22em;
     background: #80d66b;
+    margin-left: -15px;
   }
 
   ul {
@@ -172,9 +174,13 @@ div.price_line {
       list-style: none;
 
       a {
-        color: #bfb;
+        color: #000000;
         font-size: small;
       }
     }
   }
+}
+
+#columns #main {
+  margin-left: 22em;
 }

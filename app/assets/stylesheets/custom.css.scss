@@ -1,0 +1,37 @@
+@import "bootstrap";
+
+.list-group-item {
+  display: table-cell;
+  width: 18em;
+  text-align: center;
+}
+
+a, a:link, a:visited {
+  text-decoration: blink;
+}
+
+th, td, caption {
+  padding: 4px 10px 4px 5px;
+}
+
+.navbar-inverse {
+  background-color: #CBCDCA;
+  border-color: #A3A3A2;
+}
+
+.navbar > .container .navbar-brand,
+.navbar > .container-fluid .navbar-brand {
+  margin-left: 25em;
+  color: #000000;
+  font-size: x-large;
+}
+
+.title_products {
+  text-align: center;
+  margin-right: 18em;
+}
+
+.row {
+   margin-left: 0px;
+   margin-right: 0px;
+}

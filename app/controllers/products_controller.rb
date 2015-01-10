@@ -3,7 +3,13 @@ class ProductsController < ApplicationController
   before_action :set_cart
 
   def index
-    @products = Product.all.page(params[:page]).per(3)
+    if params[:category].present?
+      @category = Category.find(params[:category])
+      @products = @category.products
+    else
+      @products = Product.all
+    end
+    @products = @products.page(params[:page]).per(3)
     @categories = Category.all
   end
 
