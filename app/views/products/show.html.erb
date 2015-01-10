@@ -1,6 +1,8 @@
-<p>
+<%= image_tag('Breakfast.jpg', alt: 'Edit Entry') %>
+
+<p xmlns="http://www.w3.org/1999/html">
   <strong>
-    <%= @product.name %>
+    <h2><%= @product.name %></h2>
   </strong>
 </p>
 
@@ -13,6 +15,10 @@
 <b>Categories</b>
 <%= @product.categories.map { |c| c.name }.join(' ')%><br/>
 </p>
+
+<p>Rating: <%= @product.rating %><br/>
+  Vote: <%= link_to '+', vote_up_path(id: @product.id), method: :post %>
+  <%= link_to '-', vote_down_path(id: @product.id), method: :post %></p>
 
 <p>
   <strong>Price</strong>

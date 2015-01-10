@@ -71,6 +71,20 @@ class ProductsController < ApplicationController
     redirect_to :back
   end
 
+  def vote_up
+    session[:user_ip] = request.remote_ip
+    @voter = Session.create_or_find_by_ip(session[:user_ip])
+    @product.liked_by @voter
+    redirect_to @product
+  end
+
+  def vote_down
+    session[:user_ip] = request.remote_ip
+    @voter = Session.create_or_find_by_ip(session[:user_ip])
+    @product.disliked_by @voter
+    redirect_to @product
+  end
+
   private
 
   def product_params

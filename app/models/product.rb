@@ -2,6 +2,8 @@ class Product < ActiveRecord::Base
   has_and_belongs_to_many :categories
   has_many :order_items
 
+  acts_as_votable
+
   validates :name, presence: true, uniqueness: true, length: {in: 4..95}
   validates :description, presence: true, length: { in: 10..1000 }
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 0.00 }

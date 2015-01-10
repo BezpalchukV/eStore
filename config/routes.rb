@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   post 'change_category_position',  to: 'products#change_category_position'
+  post 'vote_up',                   to: 'products#vote_up'
+  post 'vote_down',                 to: 'products#vote_down'
   # You can have the root of your site routed with "root"
   root 'products#index'
 
