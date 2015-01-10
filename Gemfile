@@ -35,6 +35,7 @@ gem 'bootstrap-sass', '~> 3.1.1.1'
 
 # This extension provides the capabilities for sorting and reordering a number of objects in a list.
 gem 'acts_as_list'
+gem 'acts_as_votable'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
