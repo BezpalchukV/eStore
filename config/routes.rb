@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  post 'change_category_position',  to: 'products#change_category_position'
   # You can have the root of your site routed with "root"
   root 'products#index'
 

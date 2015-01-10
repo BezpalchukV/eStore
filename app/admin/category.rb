@@ -1,8 +1,14 @@
 ActiveAdmin.register Category do
 
+  config.sort_order = 'position_asc'
+
   index do
     column :name
     column :position
+    column 'Change position' do |category|
+      link_to('Up', change_category_position_path(category_id: category.id, move: 'up'), method: :post) +
+          ' ' + link_to('Down',  change_category_position_path(category_id: category.id, move: 'down'), method: :post)
+    end
     actions
   end
 
