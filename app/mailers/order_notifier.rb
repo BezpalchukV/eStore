@@ -24,4 +24,8 @@ class OrderNotifier < ApplicationMailer
 
     mail to: order.email, subject: 'E Store Order Shipped'
   end
+
+  def deliver_order(order)
+      received(order).deliver
+  end
 end

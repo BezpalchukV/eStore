@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        OrderNotifier.received(@order).deliver
+        OrderNotifier.delay.deliver_order(@order)
         format.html {redirect_to root_url, notice: 'Thank you for your order.'}
       else
         format.html {render action: 'new'}

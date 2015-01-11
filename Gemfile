@@ -43,6 +43,9 @@ gem 'acts_as_votable'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'delayed_job_active_record'
+gem 'daemons'
+
 gem 'activeadmin', github: 'activeadmin', branch: 'rails-4-2'
 gem 'inherited_resources', github: 'josevalim/inherited_resources', branch: 'rails-4-2'
 gem 'devise'
