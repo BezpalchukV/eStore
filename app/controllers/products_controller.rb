@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
   before_action :set_cart
+  before_action :set_product, only: [ :show, :edit, :vote ]
 
   def index
     if params[:category].present?
@@ -9,7 +10,7 @@ class ProductsController < ApplicationController
     else
       @products = Product.all
     end
-    @products = @products.page(params[:page]).per(3)
+    @products = @products.page(params[:page]).per(4)
     @categories = Category.all
   end
 
@@ -31,7 +32,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
   end
 
   def edit
@@ -71,21 +71,18 @@ class ProductsController < ApplicationController
     redirect_to :back
   end
 
-  def vote_up
+  def vote
     session[:user_ip] = request.remote_ip
     @voter = Session.create_or_find_by_ip(session[:user_ip])
-    @product.liked_by @voter
-    redirect_to @product
-  end
-
-  def vote_down
-    session[:user_ip] = request.remote_ip
-    @voter = Session.create_or_find_by_ip(session[:user_ip])
-    @product.disliked_by @voter
+    @product.liked_by @voter, :vote_weight => params[:weight]
     redirect_to @product
   end
 
   private
+
+  def set_product
+    @product = Product.find(params[:id])
+  end
 
   def product_params
     params.require(:product).permit(:name, :description, :price, :photo, :quantity)

@@ -4,7 +4,7 @@ class Session < ActiveRecord::Base
 
   def self.create_or_find_by_ip(ip)
     voter = Session.find_by_user_ip(ip)
-    if (voter.present?)
+    if voter.present?
       voter
     else
       Session.create(user_ip: ip)

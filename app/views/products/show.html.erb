@@ -17,8 +17,11 @@
 </p>
 
 <p>Rating: <%= @product.rating %><br/>
-  Vote: <%= link_to '+', vote_up_path(id: @product.id), method: :post %>
-  <%= link_to '-', vote_down_path(id: @product.id), method: :post %></p>
+  Vote:
+  <% 5.times do |i| %>
+        <%= link_to "#{i+1}", vote_path(id: @product.id, weight: i+1), method: :post, class: 'glyphicon glyphicon-star' %>
+  <% end %>
+</p>
 
 <p>
   <strong>Price</strong>

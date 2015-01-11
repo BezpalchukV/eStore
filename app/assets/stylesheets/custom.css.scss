@@ -34,8 +34,21 @@ th, td, caption {
 .row {
    margin-left: 0px;
    margin-right: 0px;
+   margin-top: 80px;
 }
 
 p.status {
   margin-right: 35em;
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+   /* Required for text-overflow to do anything */
+  white-space: nowrap;
+  overflow: hidden;
+
+}
+
+.col-md-3 {
+  width: inherit;
 }
