@@ -1,6 +1,6 @@
 <div class="col-xs-5">
     <div class="thumbnail">
-      <%= link_to image_tag('Breakfast.jpg', size: '256x256', alt: 'Edit Entry'), product %>
+      <%= link_to image_tag(product.photo.url, size: '256x256', alt: 'Edit Entry'), product %>
       <h3><%= link_to product.name, product %></h3>
       <%= truncate(product.description, length: 90) %>
       <div class="price_line">

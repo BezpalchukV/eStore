@@ -114,7 +114,7 @@ div.price_line {
   float: left;
   padding: 1em 2em;
   width: 20em;
-  background: #80d66b;
+  background: inherit;
 
   form, div {
     display: inline;
@@ -150,8 +150,18 @@ div.price_line {
 }
 
 #columns {
-  background: #80d66b;
-  margin-top: 4em;
+  // needs latest Compass, add '@import "compass"' to your scss
+  background-color: #b4e391; // Old browsers
+  background: #b4e391; /* Old browsers */
+  background: -moz-linear-gradient(top,  #b4e391 0%, #61c419 50%, #b4e391 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b4e391), color-stop(50%,#61c419), color-stop(100%,#b4e391)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #b4e391 0%,#61c419 50%,#b4e391 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #b4e391 0%,#61c419 50%,#b4e391 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #b4e391 0%,#61c419 50%,#b4e391 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #b4e391 0%,#61c419 50%,#b4e391 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4e391', endColorstr='#b4e391',GradientType=0 ); /* IE6-9 */
+
+  margin-top: 8em;
 
   #main {
     margin-left: 17em;
@@ -163,7 +173,7 @@ div.price_line {
     float: left;
     padding: 1em 2em;
     width: 22em;
-    background: #80d66b;
+    background: inherit;
     margin-left: -15px;
   }
 

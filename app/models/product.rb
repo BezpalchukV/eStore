@@ -10,11 +10,6 @@ class Product < ActiveRecord::Base
   validates :quantity, presence: true, numericality: { greater_than_or_equal_to: 0 }
 
   has_attached_file :photo
-  # , styles: {
-  #                              thumb: '100x100>',
-  #                              square: '200x200#',
-  #                              medium: '300x300>'
-  #                          }
 
   # Validate the attached image is image/jpg, image/png, etc
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
