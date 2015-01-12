@@ -43,24 +43,6 @@ class ProductsController < ApplicationController
   def destroy
   end
 
-  def add_to_cart
-    @product = Product.find(params[:id])
-    product_id = @product.id
-    if cookies[:cart].present?
-      products = cookies[:cart].split(',')
-      products << product_id
-      cookies[:cart] = products.join(',')
-    else
-      cookies[:cart] = product_id
-    end
-    redirect_to :back
-  end
-
-  def clear_cart
-    cookies.delete :cart
-    redirect_to :back
-  end
-
   def change_category_position
     category = Category.find(params[:category_id])
     if params[:move] == 'up'

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :orders
+  resources :orders, only: [:new, :create]
 
   resources :carts
 
@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   post 'change_category_position',  to: 'products#change_category_position'
-  post 'vote',                   to: 'products#vote'
+  post 'vote',                      to: 'products#vote'
   # You can have the root of your site routed with "root"
   root 'products#index'
 
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :order_items
 
-  resources :products
+  resources :products, only: [:index, :show]
 
   # Example resource route with options:
   #   resources :products do

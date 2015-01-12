@@ -17,7 +17,8 @@ class Product < ActiveRecord::Base
   before_destroy :ensure_not_referenced_by_any_order_item
 
   def update_rating
-    self.rating = self.get_likes.sum(:vote_weight)
+    size = self.get_likes.size
+    self.rating = (self.get_likes.sum(:vote_weight) / size).to_s
   end
 
   private
